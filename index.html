@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BienStar Laboral | Transforma tu empresa, retén tu talento</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        :root {
+            --color-primary: #3498db;
+            --color-secondary: #2ecc71;
+            --color-accent: #e67e22;
+            --color-grey-light: #f5f7fa;
+            --color-grey: #e0e0e0;
+            --color-dark: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--color-dark);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            font-size: 24px;
+            color: var(--color-primary);
+        }
+        
+        .logo span {
+            color: var(--color-accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--color-dark);
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--color-primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(52, 152, 219, 0.8), rgba(52, 152, 219, 0.8)), url('/api/placeholder/1200/600') no-repeat center center;
+            background-size: cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            color: white;
+            margin-top: 70px;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+        }
+        
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--color-accent);
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #d35400;
+            transform: translateY(-2px);
+        }
+        
+        /* Inspiración Section */
+        .inspiracion {
+            padding: 80px 0;
+            background-color: var(--color-grey-light);
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: var(--color-primary);
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .inspiration-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        
+        .inspiration-logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .inspiration-logo img {
+            width: 120px;
+            height: 80px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+        
+        /* Pilares Section */
+        .pilares {
+            padding: 80px 0;
+        }
+        
+        .pilares-container {
+            display: flex;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .pilar {
+            flex: 1;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .pilar:hover {
+            transform: translateY(-10px);
+        }
+        
+        .pilar-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .pilar:nth-child(1) .pilar-icon {
+            color: var(--color-primary);
+        }
+        
+        .pilar:nth-child(2) .pilar-icon {
+            color: var(--color-accent);
+        }
+        
+        .pilar:nth-child(3) .pilar-icon {
+            color: var(--color-secondary);
+        }
+        
+        .pilar h3 {
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        
+        /* Programas Section */
+        .programas {
+            padding: 80px 0;
+            background-color: var(--color-grey-light);
+        }
+        
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .tab-btn {
+            padding: 12px 25px;
+            background-color: white;
+            border: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .tab-btn:first-child {
+            border-radius: 5px 0 0 5px;
+        }
+        
+        .tab-btn:last-child {
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .tab-btn.active {
+            background-color: var(--color-primary);
+            color: white;
+        }
+        
+        .tab-content {
+            display: none;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .program-item {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .program-icon {
+            color: var(--color-primary);
+            font-size: 24px;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .program-text h4 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        /* Adaptaciones Section */
+        .adaptaciones {
+            padding: 80px 0;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 15px 20px;
+            text-align: left;
+        }
+        
+        .comparison-table th {
+            background-color: var(--color-primary);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: var(--color-grey-light);
+        }
+        
+        .comparison-table td:first-child {
+            font-weight: 600;
+        }
+        
+        /* Testimonios Section */
+        .testimonios {
+            padding: 80px 0;
+            background-color: var(--color-grey-light);
+            text-align: center;
+        }
+        
+        .testimonials-container {
+            display: flex;
+            gap: 30px;
+            margin-top: 50px;
+            overflow-x: auto;
+            padding-bottom: 20px;
+        }
+        
+        .testimonial {
+            flex: 0 0 350px;
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+        
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+        
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+        
+        .author-company {
+            color: var(--color-primary);
+            font-weight: 600;
+        }
+        
+        /* Recursos Section */
+        .recursos {
+            padding: 80px 0;
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .resource {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            transition: transform 0.3s;
+        }
+        
+        .resource:hover {
+            transform: translateY(-5px);
+        }
+        
+        .resource-icon {
+            font-size: 36px;
+            color: var(--color-primary);
+            margin-bottom: 20px;
+        }
+        
+        .resource h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        .resource .btn {
+            margin-top: 20px;
+            font-size: 14px;
+            padding: 8px 20px;
+        }
+        
+        /* Contacto Section */
+        .contacto {
+            padding: 80px 0;
+            background-color: var(--color-grey-light);
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 50px;
+            margin-top: 50px;
+        }
+        
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--color-grey);
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 30px;
+        }
+        
+        .info-icon {
+            color: var(--color-primary);
+            font-size: 24px;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .info-text h4 {
+            margin-bottom: 5px;
+            font-size: 18px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--color-dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            margin-right: 30px;
+        }
+        
+        .footer-col:last-child {
+            margin-right: 0;
+        }
+        
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--color-grey);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: var(--color-primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: var(--color-grey);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .pilares-container {
+                flex-direction: column;
+            }
+            
+            .program-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .resources-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-container {
+                flex-wrap: wrap;
+            }
+            
+            .footer-col {
+                flex: 0 0 50%;
+                margin-bottom: 30px;
+            }
+        }
+
+
+        
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 36px;
+            }
+            
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-col {
+                flex: 0 0 100%;
+            }
+            
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <h1>Bien<span>Star</span> Laboral</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#enfoque">Nuestro Enfoque</a></li>
+                    <li><a href="#programas">Programas</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#recursos">Recursos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Transforma tu empresa, retén tu talento</h2>
+                <p>Programa integral de bienestar laboral inspirado en prácticas globales y adaptado a la realidad de tu empresa. Mejora la productividad, aumenta la retención y crea un ambiente laboral extraordinario.</p>
+                <a href="#enfoque" class="btn">Descubre cómo implementarlo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inspiración Section -->
+    <section class="inspiracion">
+        <div class="container">
+            <h2 class="section-title">Inspirado en los Mejores</h2>
+            <p class="section-subtitle">Hemos estudiado las estrategias de bienestar y retención de talento de las empresas más exitosas del mundo para traerte lo mejor adaptado a tu realidad.</p>
+            
+            <div class="inspiration-logos">
+                <div class="inspiration-logo">
+                    <img src="images/googl.jpg" alt="Google">
+                    <p>Google</p>
+                </div>
+                <div class="inspiration-logo">
+                    <img src="images/netflix.jpg" alt="Netflix">
+                    <p>Netflix</p>
+                </div>
+                <div class="inspiration-logo">
+                    <img src="images/pata.jpg" alt="Patagonia">
+                    <p>Patagonia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pilares Section -->
+    <section class="pilares" id="enfoque">
+        <div class="container">
+            <h2 class="section-title">Nuestros Pilares</h2>
+            <p class="section-subtitle">El programa BienStar se fundamenta en tres pilares esenciales que garantizan una implementación exitosa y sostenible a largo plazo.</p>
+            
+            <div class="pilares-container">
+                <div class="pilar">
+                    <div class="pilar-icon">
+                        <i class="fas fa-heart-pulse"></i>
+                    </div>
+                    <h3>Bienestar Integral</h3>
+                    <p>Promovemos el equilibrio entre la salud física, mental y emocional de tus colaboradores, creando un entorno donde puedan desarrollarse plenamente.</p>
+                </div>
+                
+                <div class="pilar">
+                    <div class="pilar-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Cultura Flexible</h3>
+                    <p>Fomentamos una cultura organizacional que valora la autonomía, la confianza y el equilibrio entre la vida personal y profesional.</p>
+                </div>
+                
+                <div class="pilar">
+                    <div class="pilar-icon">
+                        <i class="fas fa-stairs"></i>
+                    </div>
+                    <h3>Desarrollo Continuo</h3>
+                    <p>Impulsamos el crecimiento profesional y personal a través de programas de capacitación, mentoría y oportunidades de innovación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programas Section -->
+    <section class="programas" id="programas">
+        <div class="container">
+            <h2 class="section-title">Nuestros Programas</h2>
+            <p class="section-subtitle">Conoce las diferentes iniciativas que componen nuestro programa integral de bienestar laboral, todas adaptadas a la realidad local.</p>
+            
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="tab1">Bienestar Físico</button>
+                <button class="tab-btn" data-tab="tab2">Bienestar Mental</button>
+                <button class="tab-btn" data-tab="tab3">Desarrollo Profesional</button>
+                <button class="tab-btn" data-tab="tab4">Flexibilidad Laboral</button>
+            </div>
+            
+            <div id="tab1" class="tab-content active">
+                <div class="program-grid">
+                    <div class="program-item">
+                        <div class="program-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <div class="program-text">
+                            <h4>Actividad Física Adaptable</h4>
+                            <p>Programas de actividad física que se ajustan al espacio disponible en tu empresa, desde ejercicios en escritorio hasta convenios con gimnasios locales.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <div class="program-icon">
+                            <i class="fas fa-apple-whole"></i>
+                        </div>
+                        <div class="program-text">
+                            <h4>Alimentación Saludable</h4>
+                            <p>Asesoría nutricional y opciones de alimentación saludable con productos locales, adaptados a diferentes presupuestos.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <div class="program-icon">
+                            <i class="fas fa-person-walking"></i>
+                        </div>
+                        <div class="program-text">
+                            <h4>Pausas Activas</h4>
+                            <p>Sistema estructurado de pausas durante la jornada laboral para prevenir lesiones y reducir el estrés, con ejercicios guiados.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <div class="program-icon">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <div class="program-text">
+                            <h4>Chequeos Preventivos</h4>
+                            <p>Convenios con centros médicos locales para facilitar chequeos periódicos y preventivos para tus colaboradores.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="tab2" class="tab-content">
+                <div class="program-grid">
+                    <div class="program-item">
+                        <div class="program-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="program-text">
+                            <h4>Gestión del Estrés</h4>
+                            <p>Talleres y herramientas prácticas para manejar la presión laboral y prevenir el agotamiento profesional.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <div class="program-icon">
+                            <i class="fas fa-couch"></i>
+                        </div>
+                        <div class="program-text">
+                            <h4>Espacios de Desconexión</h4>
+                            <p>Diseño e implementación de áreas de descanso y desconexión dentro del espacio laboral, adaptables a cualquier tamaño de oficina.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <div class="program-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <div class="program-text">
+                            <h4>Apoyo Psicológico</h4>
+                            <p>Red de profesionales en salud mental disponibles para consultas confidenciales a través de convenios especiales.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <div class="program-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="program-text">
+                            <h4>Comunidad y Pertenencia</h4>
+                            <p>Actividades que fortalecen los lazos entre colaboradores y el sentido de pertenencia a la organización.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="tab3" class="tab-content">
+                <div class="program-grid">
+                    <div class="program-item">
+                        <div class="program-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="program-text">
+                            <h4>Viernes de Innovación</h4>
+                            <p>Adaptación del "20% Time" de Google donde los colaboradores dedican tiempo a proyectos personales que puedan beneficiar a la empresa.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <div class="program-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="program-text">
+                            <h4>Capacitación Continua</h4>
+                            <p>Programa de formación continua a través de alianzas con instituciones educativas locales y plataformas online.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <div class="program-icon">
+                            <i class="fas fa-arrows-spin"></i>
+                        </div>
+                        <div class="program-text">
+                            <h4>Rotación Interna</h4>
+                            <p>Sistema estructurado para facilitar la movilidad entre áreas y el crecimiento horizontal dentro de la organización.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <div class="program-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="program-text">
+                            <h4>Mentoría y Coaching</h4>
+                            <p>Programa de acompañamiento para el desarrollo profesional con mentores internos y externos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="tab4" class="tab-content">
+                <div class="program-grid">
+                    <div class="program-item">
+                        <div class="program-icon">
+                            <i class="fas fa-laptop-house"></i>
+                        </div>
+                        <div class="program-text">
+                            <h4>Trabajo Híbrido</h4>
+                            <p>Política de trabajo híbrido adaptable a las necesidades de la empresa y los colaboradores, con lineamientos claros y herramientas de gestión.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <div class="program-icon">
+                            <i class="fas fa-hourglass-half"></i>
+                        </div>
+                        <div class="program-text">
+                            <h4>Banco de Horas</h4>
+                            <p>Sistema flexible de gestión de tiempo que permite a los colaboradores acumular horas y utilizarlas según sus necesidades.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <div class="program-icon">
+                            <i class="fas fa-umbrella-beach"></i>
+                        </div>
+                        <div class="program-text">
+                            <h4>Vacaciones Responsables</h4>
+                            <p>Adaptación de la política de Netflix que combina días mínimos obligatorios con flexibilidad para el resto del período vacacional.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="program-item">
+                        <div class="program-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <div class="program-text">
+                            <h4>Conciliación Familiar</h4>
+                            <p>Horarios y políticas que facilitan la conciliación entre la vida laboral y familiar, especialmente para padres y cuidadores.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Adaptaciones Section -->
+    <section class="adaptaciones">
+        <div class="container">
+            <h2 class="section-title">Adaptaciones Locales</h2>
+            <p class="section-subtitle">Hemos tomado las mejores prácticas globales y las hemos adaptado a la realidad local, manteniendo su esencia pero haciéndolas accesibles.</p>
+            
+            <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Práctica Original</th>
+                            <th>Empresa</th>
+                            <th>Adaptación Local</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Campus con amenidades completas</td>
+                            <td>Google</td>
+                            <td>Espacios de bienestar escalables, desde un rincón de descanso hasta salas completas</td>
+                        </tr>
+                        <tr>
+                            <td>20% del tiempo para proyectos personales</td>
+                            <td>Google</td>
+                            <td>Viernes de innovación: medio día al mes para ideas del equipo</td>
+                        </tr>
+                        <tr>
+                            <td>Oficinas abiertas con salas de colaboración</td>
+                            <td>Facebook</td>
+                            <td>Ambientes cowork en espacios pequeños, con separación por proyectos</td>
+                        </tr>
+                        <tr>
+                            <td>Sesiones de meditación y mindfulness</td>
+                            <td>Salesforce</td>
+                            <td>Rincones de pausa activa con ejercicios guiados en video</td>
+                        </tr>
+                        <tr>
+                            <td>Programa de mentorías global</td>
+                            <td>IBM</td>
+                            <td>Red de mentores internos y externos por área o interés</td>
+                        </tr>
+                        <tr>
+                            <td>Hackathons anuales</td>
+                            <td>Microsoft</td>
+                            <td>Mini-hackathons internos cada semestre con retos del negocio</td>
+                        </tr>
+                        <tr>
+                            <td>Transparencia salarial</td>
+                            <td>Buffer</td>
+                            <td>Tablas salariales base compartidas con el equipo en reuniones privadas</td>
+                        </tr>
+                    </tbody>
+            </table>
+
+
+<!-- Testimonios Section -->
+<section class="testimonios" id="testimonios">
+    <div class="container">
+        <h2 class="section-title">Testimonios</h2>
+        <p class="section-subtitle">Empresas que ya han implementado nuestro programa y están experimentando resultados positivos en retención, productividad y satisfacción laboral.</p>
+        
+        <div class="testimonials-container">
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>"Desde que implementamos BienStar en nuestra empresa, hemos reducido la rotación de personal en un 45% y mejorado significativamente el clima laboral. Las adaptaciones locales fueron clave para el éxito."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="/api/placeholder/50/50" alt="María González">
+                    <div class="author-info">
+                        <h4>María González</h4>
+                        <p class="author-company">Directora RRHH, TechLocal</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>"Pensamos que estas prácticas solo funcionaban en grandes corporaciones, pero BienStar nos demostró que con las adaptaciones correctas, cualquier empresa puede implementar un programa de bienestar efectivo."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="/api/placeholder/50/50" alt="Carlos Mendoza">
+                    <div class="author-info">
+                        <h4>Carlos Mendoza</h4>
+                        <p class="author-company">CEO, Distribuidora Regional</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial">
+                <div class="testimonial-content">
+                    <p>"El programa de 'Viernes de innovación' ha sido una revolución. Hemos desarrollado tres productos nuevos gracias a ideas que surgieron de nuestros colaboradores durante este tiempo dedicado a la innovación."</p>
+                </div>
+                <div class="testimonial-author">
+                    <img src="/api/placeholder/50/50" alt="Laura Sánchez">
+                    <div class="author-info">
+                        <h4>Laura Sánchez</h4>
+                        <p class="author-company">Gerente de Innovación, CreaSoft</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Recursos Section -->
+<section class="recursos" id="recursos">
+    <div class="container">
+        <h2 class="section-title">Recursos y Herramientas</h2>
+        <p class="section-subtitle">Ponemos a tu disposición recursos prácticos para implementar el programa BienStar en tu empresa de manera efectiva y sin complicaciones.</p>
+        
+        <div class="resources-grid">
+            <div class="resource">
+                <div class="resource-icon">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <h3>Guías de Implementación</h3>
+                <p>Manuales detallados para implementar el programa según el tamaño y sector de tu empresa, con pasos concretos y cronogramas realistas.</p>
+                <a href="#" class="btn">Descargar</a>
+            </div>
+            
+            <div class="resource">
+                <div class="resource-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <h3>Calculadora de ROI</h3>
+                <p>Herramienta que te permite estimar el retorno de inversión de implementar el programa BienStar, considerando métricas de rotación y productividad.</p>
+                <a href="#" class="btn">Acceder</a>
+            </div>
+            
+            <div class="resource">
+                <div class="resource-icon">
+                    <i class="fas fa-box-open"></i>
+                </div>
+                <h3>Kit de Inicio</h3>
+                <p>Material listo para usar como pósters motivacionales, plantillas de correo, presentaciones y checklist de implementación inicial.</p>
+                <a href="#" class="btn">Obtener</a>
+            </div>
+            
+            <div class="resource">
+                <div class="resource-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3>Calendario de Implementación</h3>
+                <p>Timeline sugerido con actividades secuenciales para adoptar el programa de manera gradual y sostenible en tu organización.</p>
+                <a href="#" class="btn">Ver calendario</a>
+            </div>
+            
+            <div class="resource">
+                <div class="resource-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Indicadores de Seguimiento</h3>
+                <p>Sistema de métricas e indicadores para monitorear el impacto del programa en tu organización a corto, mediano y largo plazo.</p>
+                <a href="#" class="btn">Explorar</a>
+            </div>
+            
+            <div class="resource">
+                <div class="resource-icon">
+                    <i class="fas fa-laptop"></i>
+                </div>
+                <h3>Webinars y Capacitaciones</h3>
+                <p>Acceso a sesiones formativas virtuales para líderes y equipos de RRHH sobre implementación y gestión del programa BienStar.</p>
+                <a href="#" class="btn">Registrarse</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contacto Section -->
+<section class="contacto" id="contacto">
+    <div class="container">
+        <h2 class="section-title">Contacto</h2>
+        <p class="section-subtitle">¿Interesado en implementar BienStar en tu empresa? Contáctanos para una evaluación inicial sin compromiso.</p>
+        
+        <div class="contact-container">
+            <div class="contact-form">
+                <h3>Envíanos un mensaje</h3>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="empresa">Empresa</label>
+                        <input type="text" id="empresa" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" class="form-control">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" class="form-control" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Enviar mensaje</button>
+                </form>
+            </div>
+            
+            <div class="contact-info">
+                <h3>Información de contacto</h3>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-text">
+                        <h4>Dirección</h4>
+                        <p>Av. Innovación 1250, Oficina 502<br>Barranquilla, Atl</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="info-text">
+                        <h4>Teléfono</h4>
+                        <p>+57 300 000 111</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-text">
+                        <h4>Email</h4>
+                        <p>contacto@bienstarlaboral.com</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="info-text">
+                        <h4>Horario de atención</h4>
+                        <p>Lunes a Viernes: 9:00 - 18:00<br>Sábados: 9:00 - 13:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>BienStar Laboral</h3>
+                <p>Programa integral de bienestar laboral inspirado en prácticas globales y adaptado a la realidad local de tu empresa.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Enlaces rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#enfoque">Nuestro Enfoque</a></li>
+                    <li><a href="#programas">Programas</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#recursos">Recursos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Recursos</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Guías de implementación</a></li>
+                    <li><a href="#">Calculadora de ROI</a></li>
+                    <li><a href="#">Kit de inicio</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Casos de estudio</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <p>Suscríbete para recibir novedades y recursos sobre bienestar laboral.</p>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Tu email" required>
+                    </div>
+                    <button type="submit" class="btn">Suscribirme</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2025 BienStar Laboral. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- JavaScript para funcionalidades -->
+<script>
+    // Funcionalidad para los tabs
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Desactivar todos los botones y contenidos
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Activar el botón clicado
+            button.classList.add('active');
+            
+            // Activar el contenido correspondiente
+            const tabId = button.getAttribute('data-tab');
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+    
+    // Smooth scroll para navegación
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            window.scrollTo({
+                top: targetElement.offsetTop - 70,
+                behavior: 'smooth'
+            });
+        });
+    });
+    
+    // Efecto fixed header
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+        } else {
+            header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+        }
+    });
+</script>
+</body>
+</html>
+
